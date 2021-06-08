@@ -13,6 +13,7 @@
 		CAF66E3D266F450A00FF4C96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF66E3B266F450A00FF4C96 /* Main.storyboard */; };
 		CAF66E3F266F451A00FF4C96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAF66E3E266F451A00FF4C96 /* Assets.xcassets */; };
 		CAF66E42266F451A00FF4C96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF66E40266F451A00FF4C96 /* LaunchScreen.storyboard */; };
+		CAF66E4B266F807C00FF4C96 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF66E4A266F807C00FF4C96 /* RoundButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		CAF66E3E266F451A00FF4C96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CAF66E41266F451A00FF4C96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CAF66E43266F451A00FF4C96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAF66E4A266F807C00FF4C96 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				CAF66E3E266F451A00FF4C96 /* Assets.xcassets */,
 				CAF66E40266F451A00FF4C96 /* LaunchScreen.storyboard */,
 				CAF66E43266F451A00FF4C96 /* Info.plist */,
+				CAF66E4A266F807C00FF4C96 /* RoundButton.swift */,
 			);
 			path = calcApp;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAF66E4B266F807C00FF4C96 /* RoundButton.swift in Sources */,
 				CAF66E3A266F450A00FF4C96 /* ViewController.swift in Sources */,
 				CAF66E36266F450A00FF4C96 /* AppDelegate.swift in Sources */,
 				CAF66E38266F450A00FF4C96 /* SceneDelegate.swift in Sources */,
@@ -295,7 +299,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.ac.kcg.E20C4065.calcApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -313,7 +317,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.ac.kcg.E20C4065.calcApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
