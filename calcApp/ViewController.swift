@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var calcLabel: UILabel!
     @IBOutlet weak var resetButton: UIButton!
     
+    @IBOutlet weak var zeroButton: RoundButton!
+    
     var count: Int = 0
     var point_count: Int = 0
     var prevNumber: Double = Double()
@@ -20,11 +22,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        zeroButton.frame = CGRect(x: zeroButton.frame.origin.x, y: zeroButton.frame.origin.y, width: 160, height: 70)
     }
 
 
     @IBAction func tapNumber(_ sender: UIButton) {
-        resetButton.setTitle("C", for: .normal)
         if count == 0 {
             if (sender.titleLabel?.text)! == "0" {
                 calcLabel.text! = (sender.titleLabel?.text)!
@@ -33,9 +35,11 @@ class ViewController: UIViewController {
                 calcLabel.text! += (sender.titleLabel?.text)!
                 count += 1
                 point_count += 1
+                resetButton.setTitle("C", for: .normal)
                 return
             }
         }
+        resetButton.setTitle("C", for: .normal)
         count += 1
         
         // 一回目はラベルの0がいらない
