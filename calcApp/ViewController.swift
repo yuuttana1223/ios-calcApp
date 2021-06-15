@@ -7,12 +7,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
 
     @IBOutlet weak var calcLabel: UILabel!
     @IBOutlet weak var resetButton: UIButton!
-    
     @IBOutlet weak var zeroButton: RoundButton!
+    @IBOutlet weak var tableView: UITableView!
+    
+    var answers: [String] = [String]()
     
     var count: Int = 0
     var point_count: Int = 0
@@ -22,9 +25,23 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.backgroundColor = .black
         zeroButton.frame = CGRect(x: zeroButton.frame.origin.x, y: zeroButton.frame.origin.y, width: 160, height: 70)
     }
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return answers.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = answers[indexPath.row]
+        cell.textLabel!.textColor = .white
+        cell.selectionStyle = .none
+        return cell
+    }
 
     @IBAction func tapNumber(_ sender: UIButton) {
         if count == 0 {
@@ -72,6 +89,8 @@ class ViewController: UIViewController {
             answer = prevNumber - Double(calcLabel.text!)!
             break
         case "×":
+            print(prevNumber)
+            print(Double(calcLabel.text!)!)
             answer = prevNumber * Double(calcLabel.text!)!
             break
         case "÷":
@@ -85,6 +104,8 @@ class ViewController: UIViewController {
         } else {
             calcLabel.text = String(answer)
         }
+        answers.append(String(answer))
+        tableView.reloadData()
         resetCount()
     }
     
