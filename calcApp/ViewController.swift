@@ -16,7 +16,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tableView: UITableView!
     
     var answers: [String] = [String]()
-    
     var count: Int = 0
     var point_count: Int = 0
     var prevNumber: Double = Double()
@@ -39,8 +38,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = answers[indexPath.row]
         cell.textLabel!.textColor = .white
-        cell.selectionStyle = .none
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        calcLabel.text = answers[indexPath.row]
     }
 
     @IBAction func tapNumber(_ sender: UIButton) {
@@ -89,8 +91,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             answer = prevNumber - Double(calcLabel.text!)!
             break
         case "×":
-            print(prevNumber)
-            print(Double(calcLabel.text!)!)
             answer = prevNumber * Double(calcLabel.text!)!
             break
         case "÷":
